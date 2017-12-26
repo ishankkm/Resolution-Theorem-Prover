@@ -1,0 +1,384 @@
+***
+6
+F(Joe)
+H(John)
+~H(Alice)
+~H(John)
+G(Joe)
+G(Tom)
+14
+~F(x) | G(x)
+~G(x) | H(x)
+~H(x) | F(x)
+~R(x) | H(x)
+~A(x) | H(x)
+~D(x,y) | ~H(y)
+~B(x,y) | ~C(x,y) | A(x)
+B(John,Alice)
+B(John,Joe)
+~D(x,y) | ~Q(y) | C(x,y)
+D(John,Alice)
+Q(Joe)
+D(John,Joe)
+R(Tom)
+
+***
+
+1
+F(Joe)
+2
+~A(x) | F(x)
+A(John)
+
+***
+1
+A(x)
+2
+~A(x) | F(x)
+A(John)
+
+***
+
+2
+Ancestor(Liz,Billy)
+Ancestor(Liz,Joe)
+6
+Mother(Liz,Charley)
+Father(Charley,Billy)
+~Mother(x,y) | Parent(x,y)
+~Father(x,y) | Parent(x,y)
+~Parent(x,y) | Ancestor(x,y)
+~Parent(x,y) | ~Ancestor(y,z) | Ancestor(x,z)
+
+***
+
+1
+Criminal(West)
+7
+American(West)
+~American(x) | ~Weapon(y) | ~Sells(x,y,z) | ~Enemy(z,America) | Criminal(x)
+Owns(Nono,M1)
+Missile(M1)
+~Missile(x) | ~Owns(Nono,x) | Sells(West,x,Nono)
+~Missile(x) | Weapon(x)
+Enemy(Nono,America)
+
+***
+
+1
+B(John)
+1
+~A(x) | B(John)
+
+***
+
+1
+A(John)
+2
+~A(x) | B(x)
+~B(x) | A(x)
+
+***
+
+2
+Evil(John)
+Happy(John)
+3
+~King(x) | ~Greedy(x) | Evil(x)
+King(John)
+Greedy(x)
+
+***
+
+1
+A(Lion)
+2
+A(x) | B(Ada)
+A(Umbrella) | ~B(Ada)
+
+***
+
+2
+B(Ada)
+D(Chris)
+4
+~A(x) | B(Ada)
+A(Umbrella)
+C(x,Jill) | D(x)
+~C(x,Jill)
+
+***
+
+1
+Offspring(Jojo,Jojo,Jojo,Jojo,Jojo,Jojo,Jojo,Jojo)
+1
+Offspring(a,b,c,d,e,f,g,h)
+
+***
+
+2
+Female(Alice)
+Male(Bob)
+3
+Female(x) | Human(x)
+Male(y) | Human(y)
+~Human(z)
+
+***
+
+1
+Rich(Me)
+4
+~Phd(x) | HighlyQualified(x)
+Phd(x) | EarlyEarnings(x)
+~HighlyQualified(x) | Rich(x)
+~EarlyEarnings(x) | Rich(x)
+
+***
+1
+eats(Joe, Fish)
+3
+~cat (x) | likes (x,Fish)
+~cat (y) | ~likes (y,z) | eats (y,z)
+cat (Joe) 
+
+***
+
+1
+grandfather(A,x)
+5
+grandfather(x,z) | ~father(x,y) | ~parent(x,z)
+parent(x,y) | father(x,y).
+parent(x,y) | mother(x,y).
+father(A,B)
+mother(B,C)
+
+***
+
+2
+HOWL(a)
+~LS(John)
+8
+~HOUND(x)  |  HOWL(x)
+~HAVE(x,y)  |  ~CAT(y)  |  ~HAVE(x,z)  |  ~MOUSE(z)
+~LS(x)  |  ~HAVE(x,y)  |  ~HOWL(y)
+HAVE(John,a)
+CAT(a)  |  HOUND(a)
+LS(John)
+HAVE(John,b)
+MOUSE(b)
+
+***
+
+1
+Kills(Curiosity,Tuna)
+7
+Dog(Spike)
+Owns(Jack,Spike)
+~Dog(y) | ~Owns(x, y) | AnimalLover(x)
+~AnimalLover(x1) | ~Animal(y1) | ~Kills(x1,y1)
+Kills(Jack,Tuna) | Kills(Curiosity,Tuna)
+Cat(Tuna)
+~Cat(x2) | Animal(x2) 
+
+***
+
+1
+sneeze(Mary)
+4
+~allergies(x) | sneeze(x)
+~cat(y) | ~allergicToCats(x) | allergies(x)
+cat(Felix)
+allergicToCats(Mary)
+
+TRUE
+***
+
+1
+is_bigger(Elephant, Donkey)
+4
+bigger(Elephant, Horse)
+bigger(Horse, Donkey)
+is_bigger(x, y) | ~bigger(x, y)
+is_bigger(x, y) | ~bigger(x, z) | ~is_bigger(z, y)
+
+TRUE
+***
+
+1
+Older(Lulu, Fifi)
+4
+Mother(Lulu, Fifi)
+Alive(Lulu)
+~Mother(x, y) | Parent(x, y)
+~Parent(x, y) | ~Alive(x) | Older(x, y)
+
+TRUE
+***
+
+5
+mortal(Socrates)
+ancestor(Pam, Bob)
+ancestor(Bob, Bob)
+ancestor(Bob, Pam)
+ancestor(Socrates, Pam)
+5
+man(Socrates)
+mortal(x)| ~man(x)
+parent(Pam,Bob)
+ancestor(x,x)
+ancestor(x,z)| ~parent(x,y) | ~ancestor(y,z)
+
+TRUE
+TRUE
+TRUE
+FALSE
+FALSE
+
+***
+
+1
+HasA(Spot,Heart)
+3
+Dog(Spot)
+~Dog(x) | Animal(x)
+~Animal(x) | HasA(x,Heart)
+
+TRUE
+
+***
+
+1
+Erupted(Volcano)
+4
+Volcano(Vesuvius)
+~Volcano(x) | Erupt(x)
+~Erupt(y) | Erupted(y)
+~Erupted(Vesuvius) | Erupted(Volcano)
+
+TRUE
+
+***
+
+1
+Criminal(Reality Man)
+10
+~Programmer(x) | ~Emulator(y) | ~People(z) | ~Provide(x,z,y)| Criminal(x)
+~Use(friends, x) | ~Runs(x, N64 games) | Provide(Reality Man, friends, x)
+~Software(x) | ~Runs(x, N64 games) | Emulator(x)
+Programmer(Reality Man)
+People(friends) 
+Software(U64) 
+Use(friends, U64)
+Runs(U64, N64 games)
+Provide(Reality Man, friends, U64)
+Emulator(U64)
+
+TRUE
+
+***
+
+2
+Traitor(Anakin)
+Traitor(Frodo)
+8
+~ViterbiSquirrel(x) | ~Secret(y) | ~Tells(x, y, z) | ~Hostile(z) | Traitor(x)
+Knows(Sidious, Pine)
+Resource(Pine)
+~Resource(x) | ~Knows(Sidious, x) | Tells(Anakin, x, Sidious)
+~Resource(x) | Secret(x)
+~Enemy(x, USC) | Hostile(x)
+ViterbiSquirrel(Anakin)
+Enemy(Sidious, USC)
+
+TRUE
+FALSE
+
+***
+
+1
+Aunt(Jane, Shelly)
+14
+Man(Peter)
+Man(Gary)
+Man(Kevin)
+Woman(May)
+Woman(Jane)
+Woman(Shelly)
+Parent(Kevin, Peter)
+Parent(Kevin, Gary)
+Parent(Kevin, Jane)
+Parent(May, Shelly)
+~Parent(p, a) | ~Parent(p, b) | Siblings(a, b)
+~Man(u) | ~Siblings(u, p) | ~Parent(p, n) | Uncle(u, n)
+~Woman(a) | ~Siblings(a, p) | ~Parent(p, n) | Aunt(a, n)
+
+FALSE
+
+***
+
+1
+Angry(Diana)
+10
+Batman(Bruce)
+Superman(Clark)
+WonderWoman(Diana)
+Flash(Barry)
+Beats(Clark, Bruce)
+Beats(Bruce, Clark)
+~Beats(x, y) | ~Beats(y, x) | Fight(x, y)
+~Fight(x, y) | ~Flash(z) | Sees(z, x, y)
+~Flash(z) | ~Sees(z, x, y) | ~WonderWoman(w) | Calls(z, w)
+~Flash(x) | ~WonderWoman(w) | ~Calls(x, w) | Angry(w)
+
+3
+Beats(Clark, Bruce)
+Beats(Bruce, Clark)
+Angry(Diana)
+17
+Batman(Bruce)
+Superman(Clark)
+WonderWoman(Diana)
+Flash(Barry)
+~Batman(x) | ~Superman(y) | ~Friends(x, y)
+Friends(x, y) | Enemy(x, y)
+~Batman(x) | ~Enemy(x, y) | Beats(x, y)
+~Beats(x, y) | Action(x, y) 
+~Action(x, y) | Reaction(y, x)
+~Friends(x, y) | ~Beats(x, y)
+~Enemy(x, y) | Friends(x, y)
+~Reaction(x, y) | Revenge(x, y)
+~Revenge(x, y) | Beats(x, y)
+~Beats(x, y) | ~Beats(y, x) | Fight(x, y)
+~Fight(x, y) | ~Flash(z) | Sees(z, x, y)
+~Flash(z) | ~Sees(z, x, y) | ~WonderWoman(w) | Calls(z, w)
+~Flash(x) | ~WonderWoman(w) | ~Calls(x, w) | Angry(w)
+
+
+3
+Beats(Clark, Bruce)
+Beats(Bruce, Clark)
+Angry(Diana)
+15
+Batman(Bruce)
+Superman(Clark)
+WonderWoman(Diana)
+~Batman(x) | ~Superman(y) | ~Friends(x, y)
+Friends(x, y) | Enemy(x, y)
+~Batman(x) | ~Enemy(x, y) | Beats(x, y)
+~Beats(x, y) | Action(x, y) 
+~Action(x, y) | Reaction(y, x)
+~Friends(x, y) | ~Beats(x, y)
+~Enemy(x, y) | Friends(x, y)
+~Reaction(x, y) | Revenge(x, y)
+~Revenge(x, y) | Beats(x, y)
+~Beats(x, y) | ~Beats(y, x) | Fight(x, y)
+~Fight(x, y) | ~Flash(z) | ~Sees(z, x, y) | ~WonderWoman(w) | Calls(z, w)
+~Flash(x) | ~WonderWoman(w) | ~Calls(x, w) | ~Batman(b) | ~Superman(s) | ~Fight(b, s) | ~Sees(w, b, s) | Angry(w)
+~Batman(x) | ~Superman(y) | ~Fight(x, y)| ~WonderWoman(z) | Angry(z)
+
+TRUE
+TRUE
+FALSE
+***
+
